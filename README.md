@@ -1,2 +1,7 @@
-# ecole_42
-Le repo de mon cursus...
+# Ecole 42
+
+ Mon repo...
+
+##  Tronc commun
+
+## Ma spé
