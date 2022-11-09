@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omuller <omuller@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: Olivier <omuller@student.42mulhouse.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 18:33:24 by omuller           #+#    #+#             */
-/*   Updated: 2022/11/09 12:31:27 by omuller          ###   ########.fr       */
+/*   Created: 2022/11/09 19:10:23 by Olivier           #+#    #+#             */
+/*   Updated: 2022/11/09 19:10:59 by Olivier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+t_list	*ft_lstnew(void *content)
 {
-	size_t		len;
-	char		*tab;
+	t_list	*list;
 
-	if (!s1 || !set)
+	list = malloc(sizeof(*list));
+	if (list == NULL)
 		return (NULL);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	len = ft_strlen(s1);
-	while (len && ft_strchr(set, s1[len]))
-		len--;
-	tab = ft_substr((char *)s1, 0, len + 1);
-	return (tab);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

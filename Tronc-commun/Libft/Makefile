@@ -14,6 +14,12 @@ SRCS			= $(wildcard *.c)
 
 OBJS			= $(SRCS:.c=.o)
 
+BONUS			= $(wildcard *.c)
+
+BONUS_OBJS		= $(BONUS:.c=.o)
+
+HEADER	= libft.h
+
 CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
@@ -21,6 +27,9 @@ CFLAGS			= -Wall -Wextra -Werror -I.
 NAME			=	libft.a
 
 all:			$(NAME)
+
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
