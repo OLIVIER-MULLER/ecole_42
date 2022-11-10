@@ -48,7 +48,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		// Alors on retourne l'adresse de début de boucle.
 		if (!needle[j])
 			return ((char *)&haystack[i - j]);
-		// Si on a pas atteint le caractère d'arrêt alors on reboucle avec le de part + 1  
+		// Si on a pas atteint le caractère d'arrêt alors on reboucle avec le i de départ + 1  
 		i = (i - j) + 1;
 	}
 	return (NULL);
