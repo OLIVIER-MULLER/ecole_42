@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Check si le caractère passé en paramètre est alphabétique. Majuscules et 
+minuscules comprises.
+*/
+
 #include "libft.h"
 
 int	ft_isalpha(int c)
