@@ -11,29 +11,43 @@
 /* ************************************************************************** */
 
 /*
-Memset écrit dans la chaine b, le caractère c, un nombre de fois précis (len).
-Retourne cette même adresse.
+Memset écrit des bytes 
+- Sur une chaine existante.
+- De valeur "int c" => ex: 0 pour le caractère d'arrêt, 65 pour le A...
+- Au nombre de "size_t len" => ex : sizeof(char) * 5 
+
+Puis retourne cette même chaine.
 */
-#include <stdio.h>
+//#include <stdio.h>
 #include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
+	// On crée une chaine str en char. 
 	char	*str;
-	// On crée la chaine str avec la chaine reçue en paramètre.
+	// On lui assigne la même adresse que b. (Mais str étant casté en char on peut 
+	// travailler avec... On ne peut pas avec un void.)
 	str = b;
 	// On itère le nombre de fois spécifié par len.
 	while (len > 0)
 	{
-
+		// *str est le premier char (str[0]). On y ecrit c.
 		*str = (unsigned char)c;
+		// On se deplace d'un char (+1) (str[1]). Et on reboucle.... 
 		str++;
+		// On décrémente la size de 1 car on vient de faire 1 char.
 		len--;
 	}
+	// On renvoie la chaine passée en argument. Celle ci a été modifiée car str prenait
+	// son adresse.
 	return (b);
 }
+/*
 int main(void)
 {
-		void	*str = "fkfjfjfdj";
-	printf("%s\n",ft_memset(str, 0, 10));
+		char	b[] = "123456789";
+	ft_memset(b, 67, sizeof(char) * 5);
+	printf("%hhd\n",b[4]);
+	printf("%s\n",b);
 }
+*/

@@ -9,6 +9,11 @@
 /*   Updated: 2022/11/04 16:48:29 by omuller          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+ft_bzero modifie une chaine sur 'n' bytes en entrant des 0.
+ft_bzero est identique a ft_memset et l'utilise même. 
+Sauf qu'elle injecte "en dur" la valeur 0 pour le 2eme argument. 
+*/
 
 #include "libft.h"
 //#include <stdio.h>
