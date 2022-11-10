@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t			i;
 	int				j;
 	// Si needle est vide, on retourne haystack casté en simple char. Pourra être modifié...
-	if (!needle)
+	if (!*needle)
 		return ((char *)haystack);
 	// On itère sur toute la haystack
 	i = 0;
