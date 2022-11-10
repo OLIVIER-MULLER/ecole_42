@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Check si le caractère passé en paramètre est numérique. 
+Retourne 1 si oui.
+Retourne 2 si non.
+*/
+
 #include "libft.h"
 
 int	ft_isdigit(int c)

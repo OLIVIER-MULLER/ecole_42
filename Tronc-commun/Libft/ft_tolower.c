@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Change le caractère passé en parametre en minuscule.
+Retourne le caractère modifié.
+*/
+
 #include "libft.h"
 
 int	ft_tolower(int c)

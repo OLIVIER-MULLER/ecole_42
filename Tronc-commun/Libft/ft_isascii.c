@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Check si le caractère passé en paramètre est un caractère décimal (ascii).
+Retourne 1 si oui.
+Retourne 2 si non.
+*/
+
 #include "libft.h"
 
 int	ft_isascii(int c)

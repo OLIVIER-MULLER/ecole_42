@@ -10,28 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Memset écrit dans la chaine b, le caractère c, un nombre de fois précis (len).
+Retourne cette même adresse.
+*/
+#include <stdio.h>
 #include "libft.h"
-//#include <stdio.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*str;
-
+	// On crée la chaine str avec la chaine reçue en paramètre.
 	str = b;
+	// On itère le nombre de fois spécifié par len.
 	while (len > 0)
 	{
+
 		*str = (unsigned char)c;
 		str++;
 		len--;
 	}
 	return (b);
 }
-
-/*int main()
+int main(void)
 {
-char str[100] = "Ma string est longue";
-
-ft_memset(str, 48, 8 * sizeof(char));
-printf("Apres memset(): %s\n", str);
-return 0;
-}*/
+		void	*str = "fkfjfjfdj";
+	printf("%s\n",ft_memset(str, 0, 10));
+}

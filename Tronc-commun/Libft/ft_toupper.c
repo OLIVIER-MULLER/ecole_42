@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Change le caractère passé en parametre en majuscule.
+Retourne le caractère modifié.
+*/
 #include "libft.h"
 
 int	ft_toupper(int c)

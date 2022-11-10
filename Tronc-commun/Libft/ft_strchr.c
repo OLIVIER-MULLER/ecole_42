@@ -10,8 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+La fonction localise la PREMIERE occurrence de "c"  dans la chaine "s".
+Retourne l'adresse ou nulle si il n'est pas localisé.
+Le caractère de fin '/0' peut faire partie des caractères possibles.
+*/
+
 #include "libft.h"
-//#include <stdio.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -19,22 +24,19 @@ char	*ft_strchr(const char *s, int c)
 	char	*str;
 
 	i = 0;
+	// On recrée la chaine 's' que l'on appelle 'str' car 's' est const (read only).
+	// On cast obligatoirement en (char *).
 	str = (char *)s;
+	// On itère sur la nouvelle chaine et on compare chaque caractère.
+	// Dès que le caractère correspond on retourne l'adresse avec &.
 	while (str[i] != '\0')
 	{
-		if (str[i] == (char)c)
+		if (str[i] == (char)c) // On convertit c pour comparer des données similaires.
 			return (&str[i]);
 		i++;
 	}
+	// Ici on check le dernier caractère ('\0') si le while n'a rien donné.
 	if ((char)c == str[i])
 		return (&str[i]);
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	char str[] = "ggggggggagggggggggg";
-	int c = 97;
-	printf("L\'adresse de mon char est: %p\n",ft_strchr(str, c));
-	return (0);
-}*/

@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Check si le caractère passé en paramètre est alphabétique & numérique.
+Utilise nos 2 fonctions précédemmment créees. 
+Retourne 1 si oui.
+Retourne 2 si non.
+*/
+
 #include "libft.h"
 
 int	ft_isalnum(int c)
