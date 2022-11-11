@@ -10,43 +10,60 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ft_strlcat copie src a la fin de dest et ajoute un '/0'
+*/
+
 #include "libft.h"
 //#include <stdio.h>
-//Calcul de la valeur de retour pour srcsize	
-//Ecriture de la chaine en commencant a la fin de dest[]
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
 	size_t	destsize;
 	size_t	srcsize;
-	size_t	limitsize;
 	size_t	k;
-
+	// On initialise 3 variables. On assigne les tailles dest et de src
 	destsize = ft_strlen(dest);
 	srcsize = ft_strlen(src);
-	limitsize = dstsize;
-	if (limitsize == 0)
+
+				/*   Calcul de srcsize pour le retour de la fonction   */
+
+	// Si dstsize passé en paramètre est NULL on retourne srcsize
+	if (dstsize == 0)
 		return (srcsize);
-	if (limitsize < destsize)
-		srcsize += limitsize;
+	// Si dstsize passé en paramètre est plus petit que la taille reelle
+	// de dest, on limite l'ajout a src a la taille passée en parametre avec dstsize.
+	if (dstsize < destsize)
+		srcsize += dstsize;
+	// Si dstsize passé en paramètre est >= à la taille reelle
+	// de dest, on ajoute a src la longueur totale de la chaine dest (destsize).
 	else
 		srcsize += destsize;
+
+				/*   Concaténation de src apres dest   */
+
+	// On itère temps que:
+	// - on est pas la fin de src 
+	// - la taille reelle de dest (destsize) est < a la taille souhaitée (dstsize)
 	k = 0;
-	while (src[k] != '\0' && (destsize + k) < limitsize - 1)
+	while (src[k] != '\0' && (destsize + k) < dstsize - 1)
 	{
+		// On ecrit src sur dest a partir de sa fin
 		dest[destsize + k] = src[k];
 		k++;
 	}
+	// On ecrit le caractère d'arrêt
 	dest[destsize + k] = '\0';
 	return (srcsize);
 }
-
-/*int	main(void)
+/*
+int	main(void)
 {
-    char    dest[] = "Ma str";
+    char    dest[100] = "Mastringdest";
     char    src[] = "123456789";
 
-    printf("Resultat nombre caractere strlcat: %lu\n", ft_strlcat(dest, src, 3));
+    printf("Retour de la taille de la src: %lu\n", ft_strlcat(dest, src, 22));
     printf("Nouvelle string: %s\n", dest);
     return (0);
-}*/
+}
+*/
