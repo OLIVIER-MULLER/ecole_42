@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Permet d'ecrire une chaine à partir d'un int
+
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)

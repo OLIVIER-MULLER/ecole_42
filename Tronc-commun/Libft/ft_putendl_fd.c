@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Permet d'ecrire une chaine finie par le caractère d'arrêt
+
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
