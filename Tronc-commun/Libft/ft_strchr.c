@@ -12,7 +12,7 @@
 
 /*
 La fonction localise la PREMIERE occurrence de "c"  dans la chaine "s".
-Retourne l'adresse ou nulle si il n'est pas localisé.
+Retourne l'adresse ou NULL si il n'est pas localisé.
 Le caractère de fin '/0' peut faire partie des caractères possibles.
 */
 
