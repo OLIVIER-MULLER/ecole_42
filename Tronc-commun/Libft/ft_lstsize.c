@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 /*
 Compte le nobre d'éléments dans la liste.
+On change le pointeur de lst avec le pointeur next (le suivant).
 On incrémente une variable à chaque tour temps que lst ne retourne pas NULL.
 */
 #include "libft.h"
