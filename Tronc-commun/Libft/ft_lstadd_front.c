@@ -10,10 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// ft_lstadd_front permet de mettre un nouvel élément en se servant d'une variable
+// "next"
+
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *alst;
-	*alst = new;
+	// On fait pointer new sur next.
+	// Sur la même ligne, on change immédiatement l'adresse du nouvel élément (new)
+	//en y mettant l'adresse du premier élément 
+	new->next = *lst;
+	// On fait pointer l'élémnet new au debut de la liste
+	*lst = new;
 }

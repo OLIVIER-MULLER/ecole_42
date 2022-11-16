@@ -9,7 +9,12 @@
 /*   Updated: 2022/11/09 19:55:52 by Olivier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+Renvoie le dernier élément de la liste.
+Si la liste n'est pas nulle. 
+On boucle temps que le pointeur next ne retourne pas 0.
+On change le pointeur de lst avec le suivant.
+*/
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
