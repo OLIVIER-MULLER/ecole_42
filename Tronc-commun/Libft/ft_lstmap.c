@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	t_list	*ft_newlst(t_list *new_lst, t_list *lst, void *(*f)(void *)
+static	t_list	*newlst(t_list *new_lst, t_list *lst, void *(*f)(void *)
 							, void (*del)(void *))
 {
 	t_list	*add;
@@ -33,13 +33,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (lst == NULL)
 		return (NULL);
+		//On crée une nouvelle liste avec la fonction ft_lstnew
 	new_lst = ft_lstnew(f(lst->content));
 	if (new_lst == NULL)
 		return (NULL);
+		// On deplace le pointeur sur la liste suivante
 	lst = lst->next;
 	while (lst)
 	{
-		ft_newlst(new_lst, lst, f, del);
+		newlst(new_lst, lst, f, del);
 		lst = lst->next;
 	}
 	return (new_lst);
